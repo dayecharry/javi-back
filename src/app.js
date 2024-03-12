@@ -8,11 +8,11 @@ import taskRoutes from './routes/task.routes.js';
 import gameRoutes from './routes/game.routes.js';
 
 const app = express();
-
-app.use(cors({
+app.options('*', cors())
+/*app.use(cors({
     origin:'*',
     credentials: true
-}));
+}));*/
 app.use(morgan('dev'));
 //middleware para que express entienda json, y convierta los req.body
 app.use(express.json());
